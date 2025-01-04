@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import clsx from "clsx";
+import Button from "../components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,7 +98,7 @@ const Hero = () => {
 
       <div
         id="video-frame"
-        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
+        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
       >
         <div>
           {/* Main front video player */}
@@ -141,8 +141,8 @@ const Hero = () => {
           />
         </div>
 
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          d<b>a</b>sh
+        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
+          das<b>h</b>
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
@@ -173,7 +173,7 @@ const Hero = () => {
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        d<b>a</b>sh
+        das<b>h</b>
       </h1>
     </div>
   );
