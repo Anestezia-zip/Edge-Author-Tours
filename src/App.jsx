@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContactUsPage from "./pages/contact-form/ContactUsPage/ContactUsPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home-page/HomePage";
 
 const App = () => {
   return (

@@ -7,7 +7,13 @@ import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
-const navItems = ["Our Stories", "All trips", "Our path", "Prices", "Contact Us"];
+const navItems = [
+  "Our gallery",
+  "All trips",
+  "Our path",
+  "Prices",
+  "Contact Us",
+];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -72,35 +78,13 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-          <Link to="/">
-            <img src="/img/sunset.png" alt="logo" className="w-10" />
-          </Link>
-
-            <Button
-              id="product-button"
-              title="Products"
-              rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-            />
-          </div>
-
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`${item.split(' ').join('-').toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+            <Link to="/">
+              <img src="/img/sunset.png" alt="logo" className="w-10 max-sm:w-14" />
+            </Link>
 
             <button
               onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+              className="flex items-center space-x-0.5 max-sm:hidden"
             >
               <audio
                 ref={audioElementRef}
@@ -120,6 +104,21 @@ const NavBar = () => {
                 />
               ))}
             </button>
+          </div>
+
+          {/* Navigation Links and Audio Button */}
+          <div className="flex h-full items-center pl-8">
+            <div>
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={`${item.split(" ").join("-").toLowerCase()}`}
+                  className="nav-hover-btn"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       </header>
