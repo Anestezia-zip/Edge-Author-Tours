@@ -36,6 +36,7 @@ const About = () => {
         <AnimatedTitle
           title="Emb<b>a</b>rk on your next <b>u</b>nique adventure"
           containerClass="mt-5 !text-black text-center"
+          loading="lazy"
         />
 
         <div className="about-subtext">
@@ -51,12 +52,6 @@ const About = () => {
       <div className="h-[640px] max-md:h-[450px] w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <ContactForm />
-
-          {/* <img
-            src="img/about.webp"
-            alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
-          /> */}
         </div>
       </div>
     </div>

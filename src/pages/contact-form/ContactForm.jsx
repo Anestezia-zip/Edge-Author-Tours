@@ -8,9 +8,9 @@ export const destinations = [
   { name: "Japan", image: "/img/japan.png" },
   { name: "Australia", image: "/img/australia.png" },
   { name: "Canada", image: "/img/canada.png" },
-  { name: "Brazil", image: "/img/italy.png" },
-  { name: "Thailand", image: "/img/italy.png" },
-  { name: "Peru", image: "/img/italy.png" },
+  { name: "Austria", image: "/img/italy.png" },
+  { name: "Spain", image: "/img/italy.png" },
+  { name: "Jordan", image: "/img/italy.png" },
 ];
 
 const ContactForm = () => {

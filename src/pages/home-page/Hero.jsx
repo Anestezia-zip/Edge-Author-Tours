@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import clsx from "clsx";
 import Button from "../../components/Button";
+import { BentoTilt } from "../../components/BentoTilt";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,15 +108,18 @@ const Hero = () => {
               onClick={handleMiniVdClick}
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
             >
-              <video
-                ref={nextVideoRef}
-                src={getVideoSrc(upcomingVideoIndex)}
-                loop
-                muted
-                id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={handleVideoLoad}
-              />
+              <BentoTilt className="bento-tilt_2" quickerMovement='60'>
+                <video
+                  ref={nextVideoRef}
+                  src={getVideoSrc(upcomingVideoIndex)}
+                  loop
+                  muted
+                  id="current-video"
+                  className="border-hsla size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                  loading="lazy"
+                />
+              </BentoTilt>
             </div>
           </div>
 
@@ -126,7 +130,7 @@ const Hero = () => {
             loop
             muted
             id="next-video"
-            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            className=" absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
           <video
@@ -150,14 +154,22 @@ const Hero = () => {
             <h1
               className={clsx(
                 "special-font hero-heading",
-                upcomingVideoIndex !== 3 ? "text-black md:text-blue-100" : "text-blue-100"
+                upcomingVideoIndex !== 3
+                  ? "text-black md:text-blue-100"
+                  : "text-blue-100"
               )}
             >
               drea<b>m</b>
             </h1>
 
-            <h2 className={clsx("mb-5 max-sm:text-xl max-w-68 font-bold font-robert-regular tracking-wider", 
-              upcomingVideoIndex !== 3 ? "text-black md:text-blue-100" : "text-blue-100")}>
+            <h2
+              className={clsx(
+                "mb-5 max-sm:text-xl max-w-68 font-bold font-robert-regular tracking-wider",
+                upcomingVideoIndex !== 3
+                  ? "text-black md:text-blue-100"
+                  : "text-blue-100"
+              )}
+            >
               Watch our latest trip to Lanzarote <br /> and relive the
               experience.
             </h2>
