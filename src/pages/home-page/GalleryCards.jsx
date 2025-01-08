@@ -45,7 +45,7 @@ const GalleryCards = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+          <BentoTilt className="bento-tilt_1 row-span-1 ms-16 md:col-span-1 md:ms-0">
             <BentoCard
               src="videos/gallery-card-3.mp4"
               title={

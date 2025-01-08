@@ -4,7 +4,9 @@ import { TiLocationArrow } from "react-icons/ti";
 export const BentoCard = ({ src, title, description, description2 }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
+
   const hoverButtonRef = useRef(null);
+  const videoRef = useRef(null);
 
   const handleMouseMove = (event) => {
     if (!hoverButtonRef.current) return;
@@ -16,12 +18,19 @@ export const BentoCard = ({ src, title, description, description2 }) => {
     });
   };
 
-  const handleMouseEnter = () => setHoverOpacity(1);
-  const handleMouseLeave = () => setHoverOpacity(0);
+  const handleMouseEnter = () => {
+    setHoverOpacity(1);
+  };
+  const handleMouseLeave = () => {
+    setHoverOpacity(0);
+  };
 
   return (
-    <div className="relative size-full">
+    <div
+      className="relative size-full"
+    >
       <video
+        ref={videoRef}
         src={src}
         loop
         muted

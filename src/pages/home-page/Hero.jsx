@@ -164,7 +164,7 @@ const Hero = () => {
 
             <h2
               className={clsx(
-                "mb-5 max-sm:text-xl max-w-68 font-bold font-robert-regular tracking-wider",
+                "mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider",
                 upcomingVideoIndex !== 3
                   ? "text-black md:text-blue-100"
                   : "text-blue-100"

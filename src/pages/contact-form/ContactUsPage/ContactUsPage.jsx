@@ -52,7 +52,7 @@ const ContactUsPage = () => {
                 <DestinationList
                   selectedDestinations={selectedDestinationsState}
                   setSelectedDestinations={setSelectedDestinations}
-                  containerClassList={'h-20'}
+                  containerClassList={'!h-24'}
                 />
               </div>
             </div>
