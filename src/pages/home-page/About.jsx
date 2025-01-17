@@ -11,11 +11,12 @@ const About = () => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
-        start: "center center",
+        start: "center 60%",
         end: "+=670 center",
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
+        markers: true
       },
     });
 
