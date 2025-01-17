@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { monthNames } from "../../constants";
-import { TiLocationArrow } from "react-icons/ti";
 import Button from "../../components/Button";
 import ModalPricing from "../../components/ModalPricing";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutUs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +14,16 @@ const AboutUs = () => {
   const currentMonth = monthNames[currentDate.getMonth()];
   const currentDay = currentDate.getDate();
 
+  useEffect(() => {
+    AOS.init({ duration: 400 }); // Настройка продолжительности анимации
+  }, []);
+
   return (
     <div className="mx-auto max-w-[950px] text-sm md:text-xl font-robert-regular tracking-wider py-10 px-4">
       {/* Welcome to Edge */}
       <div className="relative">
         <div className="w-52 h-52 absolute left-1/2 -translate-x-1/2 -z-10 bg-white rounded-full" />
-        <p className="font-general text-center uppercase text-sm md:text-2xl mb-8">
+        <p className="font-general text-center uppercase text-sm md:text-2xl mb-8" data-aos="fade-up">
           Welcome to Edge
         </p>
         <p className="font-general tracking-normal mt-2 mb-5 text-center max-w-lg mx-auto">

@@ -3,6 +3,9 @@ import Hero from "./Hero";
 import GalleryCards from "./GalleryCards";
 import About from "./About";
 import AboutUs from "./AboutUs";
+import FloatingImage from "./FloatingImage";
+import FAQs from "./FAQs";
+import Footer from "../../components/Footer";
 
 const HomePage = () => {
   return (
@@ -11,6 +14,9 @@ const HomePage = () => {
       <AboutUs />
       <About />
       <GalleryCards />
+      <FloatingImage />
+      <FAQs />
+      <Footer />
     </div>
   );
 };

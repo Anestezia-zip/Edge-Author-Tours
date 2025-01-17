@@ -47,6 +47,12 @@ body {
     @apply relative mr-10 max-sm:mr-6 font-general text-sm uppercase text-black after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
   }
 
+  .nav-hover-btn.active::after {
+    transform: scaleX(1); /* Линия остаётся полностью растянутой */
+    transform-origin: bottom left;
+  }
+  
+
   .floating-nav {
     background-color: #fffffff9;
     @apply rounded-lg border;
@@ -106,12 +112,17 @@ body {
 
   .story-img-container {
     @apply relative md:h-dvh h-[90vh] w-full;
-    filter: url("#flt_tag");
   }
 
   .story-img-mask {
     @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
-    clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+    clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%);
+  }
+
+  @media (min-width: 768px) {
+    .story-img-mask {
+      clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%); 
+    }
   }
 
   .story-img-content {
@@ -136,11 +147,15 @@ body {
   }
 
   .contact-clip-path-1 {
-    clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
+    clip-path: polygon(0% 0%, 74% 0, 70% 84%, 15% 93%);
   }
 
   .contact-clip-path-2 {
-    clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
+    clip-path: polygon(19% 15%, 90% 20%, 80% 100%, 4% 84%);
+  }
+
+  .contact-clip-path-3 {
+    clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 90%);
   }
 }
 
@@ -276,3 +291,7 @@ body {
 video {
   will-change: transform, opacity;
 }
+
+
+
+

@@ -7,18 +7,21 @@ import NumberOfTravelers from "./contact-form-components/NumberOfTravelers";
 import ArrivalDate from "./contact-form-components/ArrivalDate";
 import DestinationList from "../../../components/DestinationList";
 import PersonalDetails from "./contact-form-components/PersonalDetails";
+import Footer from "../../../components/Footer";
 
 const ContactUsPage = () => {
   const location = useLocation();
-  const { selectedDestinations } = location.state || {};
+  const { selectedDestinations, fromContactForm } = location.state || {};
   const [step, setStep] = useState(0);
   const [selectedDestinationsState, setSelectedDestinations] = useState(
     selectedDestinations || []
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (fromContactForm) {
+      window.scrollTo(230, 230); // We only scroll if we're moving from a form
+    }
+  }, [fromContactForm]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +44,7 @@ const ContactUsPage = () => {
         </p>
       </div>
 
-      <div className="rounded-3xl p-6 bg-white/80 mt-10 max-w-6xl mx-auto">
+      <div className="rounded-3xl p-6 bg-white/80 my-14 max-w-6xl mx-auto">
         {step === 0 && (
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -90,6 +93,7 @@ const ContactUsPage = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </>
   );
 };

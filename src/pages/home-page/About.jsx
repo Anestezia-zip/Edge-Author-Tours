@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <div id="about" className="min-h-screen w-screen">
-      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
+      <div className="relative mb-8 max-sm:mb-2 mt-36 flex flex-col items-center gap-5">
         <AnimatedTitle
           title="Emb<b>a</b>rk on your next <b>u</b>nique adventure"
           containerClass="mt-5 !text-black text-center"
@@ -45,7 +45,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="min-h-[640px] max-md:min-h-[450px] w-screen" id="clip">
+      <div className="min-h-[650px] max-md:min-h-[450px] xl:min-h-[750px] 2xl:min-h-[850px] w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <ContactForm className="absolute left-0 top-0 size-full object-cover" />
         </div>

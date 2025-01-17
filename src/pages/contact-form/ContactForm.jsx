@@ -8,9 +8,9 @@ export const destinations = [
   { name: "Japan", image: "/img/japan.png" },
   { name: "Australia", image: "/img/australia.png" },
   { name: "Canada", image: "/img/canada.png" },
-  { name: "Austria", image: "/img/italy.png" },
-  { name: "Spain", image: "/img/italy.png" },
-  { name: "Jordan", image: "/img/italy.png" },
+  { name: "Austria", image: "/img/austria.png" },
+  { name: "Spain", image: "/img/spain.png" },
+  { name: "Jordan", image: "/img/jordan.png" },
 ];
 
 const ContactForm = () => {
@@ -20,8 +20,8 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/contact-us", {
-      state: { selectedDestinations }, // Передаем данные через state
+    navigate("/custom-tours", {
+      state: { selectedDestinations, fromContactForm: true }, // Передаем данные через state
     });
   };
 
@@ -48,7 +48,7 @@ const ContactForm = () => {
             onClick={() => setStep((prevStep) => prevStep + 1)}
             className={`w-full py-3 px-6 font-bold rounded-3xl ${
               selectedDestinations.length > 0
-                ? "bg-pink-600 text-white"
+                ? "bg-yellow-300 text-black"
                 : "bg-gray-400 cursor-not-allowed"
             }`}
             disabled={selectedDestinations.length === 0}
@@ -72,7 +72,7 @@ const ContactForm = () => {
             onClick={handleSubmit}
             className={`w-full py-3 px-6 font-bold rounded-3xl ${
               selectedDestinations.length > 0
-                ? "bg-pink-600 text-white"
+                ? "bg-yellow-300 text-black"
                 : "bg-gray-400 cursor-not-allowed"
             }`}
             disabled={selectedDestinations.length === 0}

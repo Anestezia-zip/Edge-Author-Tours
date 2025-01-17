@@ -2,17 +2,14 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
-import { TiLocationArrow } from "react-icons/ti";
-
-import Button from "./Button";
 import { Link } from "react-router-dom";
 
 const navItems = [
-  "Our gallery",
+  "Tour calendar",
   "All trips",
   "Our path",
-  "Prices",
-  "Contact Us",
+  "Custom tours",
+  "FAQs",
 ];
 
 const NavBar = () => {

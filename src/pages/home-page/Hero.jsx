@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/all";
 import clsx from "clsx";
 import Button from "../../components/Button";
 import { BentoTilt } from "../../components/BentoTilt";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,7 @@ const Hero = () => {
 
   const totalVideos = 4;
   const nextVideoRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -179,6 +181,7 @@ const Hero = () => {
               title="View Report"
               leftIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300 flex-center gap-1"
+              onClick={() => navigate("/all-trips")}
             />
           </div>
         </div>

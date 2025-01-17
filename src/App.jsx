@@ -3,6 +3,10 @@ import NavBar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContactUsPage from "./pages/contact-form/ContactUsPage/ContactUsPage";
 import HomePage from "./pages/home-page/HomePage";
+import TourCalendar from "./pages/tour-calendar/TourCalendar";
+import AllTrips from "./pages/all-trips/AllTrips";
+import OurPath from "./pages/our-path/OurPath";
+import Reviews from "./pages/faqs/Reviews";
 
 const App = () => {
   return (
@@ -11,9 +15,12 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element={<HomePage/>} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/tour-calendar" element={<TourCalendar />} />
+            <Route path="/all-trips" element={<AllTrips />} /> 
+            <Route path="/our-path" element={<OurPath />} /> 
+            <Route path="/custom-tours" element={<ContactUsPage />} />
+            <Route path="/faqs" element={<Reviews />} />
           </Routes>
-          <section className="w-screen min-h-screen bg-gray-600"></section>
         </main>
 
       </Router>  
