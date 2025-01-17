@@ -46,7 +46,7 @@ const ContactForm = () => {
 
           <button
             onClick={() => setStep((prevStep) => prevStep + 1)}
-            className={`w-full py-3 px-6 font-bold rounded-3xl ${
+            className={`w-full py-3 px-6 mt-2 font-bold rounded-3xl ${
               selectedDestinations.length > 0
                 ? "bg-yellow-300 text-black"
                 : "bg-gray-400 cursor-not-allowed"

@@ -151,7 +151,7 @@ const AboutUs = () => {
           <h3 className="sm:text-xl font-bold text-blue-800">5,000+</h3>
           <p className="text-gray-600">Partnered Properties</p>
           <img
-            className="absolute z-10 top-8 -right-8 max-sm:-right-5 max-md:-right-6 w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
+            className="absolute z-10 top-8 -right-8 max-sm:-right-7 max-md:-right-6 w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
             src="/img/double-right-arrow.png"
             alt="double-right-arrow"
           />
