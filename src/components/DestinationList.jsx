@@ -19,7 +19,7 @@ const DestinationList = ({
   };
 
   return (
-    <ul className="list-none p-0 mb-6 max-md:mb-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-md:gap-1">
+    <ul className="list-none p-0 mb-6 max-md:mb-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 max-md:gap-1">
       {destinations.map((destination) => (
         <li
           key={destination.name}
@@ -30,7 +30,7 @@ const DestinationList = ({
               : "border-black/10 hover:border-black/30"
           }`}
         >
-          <div className="flex items-center relative w-full h-full max-md:h-12">
+          <div className="flex items-center relative w-full h-full">
             <img
               src={destination.image}
               alt={destination.name}

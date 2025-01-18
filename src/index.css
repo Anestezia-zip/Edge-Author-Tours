@@ -80,11 +80,16 @@ body {
   }
 
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-85dvh] max-md:bottom-[-77dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
   }
 
   .about-image {
-    @apply absolute left-1/2 top-0 max-md:w-[70%] z-20 -translate-x-1/2 rounded-3xl;
+    @apply absolute left-1/2 top-0 z-20 -translate-x-1/2 rounded-3xl;
+  }
+
+  .about-image-md {
+    @apply mx-auto z-20 rounded-3xl;
+    
   }
 
   .animated-title {

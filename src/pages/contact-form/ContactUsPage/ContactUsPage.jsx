@@ -55,7 +55,7 @@ const ContactUsPage = () => {
                 <DestinationList
                   selectedDestinations={selectedDestinationsState}
                   setSelectedDestinations={setSelectedDestinations}
-                  containerClassList={'!h-24'}
+                  containerClassList={'max-md:h-16 md:h-20'}
                 />
               </div>
             </div>

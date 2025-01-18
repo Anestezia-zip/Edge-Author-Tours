@@ -33,7 +33,7 @@ const ContactForm = () => {
   }, [selectedDestinations, step]);
 
   return (
-    <div className="rounded-3xl p-6 m-2 mt-0 bg-white/80">
+    <div className="rounded-3xl p-6 m-2 mb-0 mt-0 bg-white">
       {step === 0 && (
         <>
           <h1 className="text-xl font-bold mb-2 max-md:text-base">
@@ -42,6 +42,7 @@ const ContactForm = () => {
           <DestinationList
             selectedDestinations={selectedDestinations}
             setSelectedDestinations={setSelectedDestinations}
+            containerClassList={'max-md:h-16'}
           />
 
           <button
@@ -66,11 +67,12 @@ const ContactForm = () => {
           <DestinationList
             selectedDestinations={selectedDestinations}
             setSelectedDestinations={setSelectedDestinations}
+            containerClassList={'max-md:h-16'}
           />
 
           <button
             onClick={handleSubmit}
-            className={`w-full py-3 px-6 font-bold rounded-3xl ${
+            className={`w-full py-3 px-6 mt-2 font-bold rounded-3xl ${
               selectedDestinations.length > 0
                 ? "bg-yellow-300 text-black"
                 : "bg-gray-400 cursor-not-allowed"
