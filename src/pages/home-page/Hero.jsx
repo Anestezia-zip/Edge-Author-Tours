@@ -7,6 +7,7 @@ import clsx from "clsx";
 import Button from "../../components/Button";
 import { BentoTilt } from "../../components/BentoTilt";
 import { useNavigate } from "react-router-dom";
+import ReactPlayer from 'react-player'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,17 +126,17 @@ const Hero = () => {
           </div>
 
           {/* Primary background video player */}
-          <video
+          <ReactPlayer
             ref={nextVideoRef}
-            src={getVideoSrc(currentIndex)}
+            url={getVideoSrc(currentIndex)}
+            playing={true}
             loop
             muted
             autoPlay
             playsInline
             preload="auto"
-            id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handleVideoLoad}
+            onReady={handleVideoLoad} // обработчик загрузки
           />
           <video
             src={getVideoSrc(
