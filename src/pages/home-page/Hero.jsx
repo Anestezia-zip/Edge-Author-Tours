@@ -116,6 +116,7 @@ const Hero = () => {
                   src={getVideoSrc(upcomingVideoIndex)}
                   loop
                   muted
+                  playsInline
                   id="current-video"
                   className="border-hsla size-64 origin-center scale-150 object-cover object-center"
                   onLoadedData={handleVideoLoad}
