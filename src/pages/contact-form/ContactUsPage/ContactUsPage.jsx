@@ -79,7 +79,7 @@ const ContactUsPage = () => {
 
         {step === 1 && (
           <div className="flex flex-col items-center justify-center h-dvh bg-gray-100">
-            <h1 className="text-3xl font-bold mb-6">
+            <h1 className="text-3xl font-bold mb-6 p-1 text-center">
               Thank you for reaching out!
             </h1>
             <p className="text-lg mb-8">
