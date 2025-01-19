@@ -80,7 +80,13 @@ body {
   }
 
   .about-subtext {
-    @apply absolute bottom-[-85dvh] max-md:bottom-[-77dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute -z-10 translate-y-[600px] max-md:translate-y-[670px]  left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+  }
+
+  @media (max-width: 768px) and (max-height: 770px) {
+    .about-subtext {
+      @apply hidden;
+    }
   }
 
   .about-image {
