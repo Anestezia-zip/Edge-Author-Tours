@@ -7,7 +7,6 @@ import clsx from "clsx";
 import Button from "../../components/Button";
 import { BentoTilt } from "../../components/BentoTilt";
 import { useNavigate } from "react-router-dom";
-import ReactPlayer from 'react-player'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -126,17 +125,17 @@ const Hero = () => {
           </div>
 
           {/* Primary background video player */}
-          <ReactPlayer
+          <video
             ref={nextVideoRef}
-            url={getVideoSrc(currentIndex)}
-            playing={true}
+            src={getVideoSrc(currentIndex)}
             loop
             muted
             autoPlay
             playsInline
             preload="auto"
+            id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onReady={handleVideoLoad} // обработчик загрузки
+            onLoadedData={handleVideoLoad}
           />
           <video
             src={getVideoSrc(
@@ -161,8 +160,10 @@ const Hero = () => {
               className={clsx(
                 "special-font hero-heading",
                 upcomingVideoIndex !== 3
-                  ? "text-black md:text-blue-100"
-                  : "text-blue-100"
+                  ? "text-black"
+                  : "text-blue-100",
+                  upcomingVideoIndex === 4
+                  && "text-blue-100"
               )}
             >
               drea<b>m</b>
@@ -172,8 +173,10 @@ const Hero = () => {
               className={clsx(
                 "mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider",
                 upcomingVideoIndex !== 3
-                  ? "text-black md:text-blue-100"
-                  : "text-blue-100"
+                  ? "text-black"
+                  : "text-blue-100",
+                  upcomingVideoIndex === 4
+                  && "text-blue-100"
               )}
             >
               Watch our latest trip to Lanzarote <br /> and relive the
