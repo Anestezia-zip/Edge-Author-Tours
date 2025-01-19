@@ -119,7 +119,6 @@ const Hero = () => {
                   id="current-video"
                   className="border-hsla size-64 origin-center scale-150 object-cover object-center"
                   onLoadedData={handleVideoLoad}
-                  loading="lazy"
                 />
               </BentoTilt>
             </div>
@@ -131,10 +130,10 @@ const Hero = () => {
             src={getVideoSrc(currentIndex)}
             loop
             muted
+            playsInline
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
-            onError={(e) => console.error("Error loading video:", e)}
           />
           <video
             src={getVideoSrc(
