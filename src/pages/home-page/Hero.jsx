@@ -110,21 +110,23 @@ const Hero = () => {
 
       {isIphone ? (
         <div
+          id="video-frame"
           className="absolute left-0 top-0 size-full object-cover object-center"
           style={{
-            backgroundImage: 'url("/img/gems.png")',
+            backgroundImage: 'url("/img/nature.png")',
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
+          <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
+            das<b>h</b>
+          </h1>
           <div className="mt-24 px-5 sm:px-10">
-            <h1
-              className="special-font hero-heading">
+            <h1 className="special-font hero-heading text-blue-100">
               drea<b>m</b>
             </h1>
 
-            <h2
-              className="mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider">
+            <h2 className="mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider">
               Watch our latest trip to Lanzarote <br /> and relive the
               experience.
             </h2>
@@ -136,10 +138,11 @@ const Hero = () => {
               containerClass="bg-yellow-300 flex-center gap-1"
               onClick={() => navigate("/all-trips")}
             />
+
+            <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+              das<b>h</b>
+            </h1>
           </div>
-          <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
-            das<b>h</b>
-          </h1>
         </div>
       ) : (
         <>
