@@ -119,7 +119,7 @@ const Hero = () => {
                   playsInline
                   id="current-video"
                   className="border-hsla size-64 origin-center scale-150 object-cover object-center"
-                  onLoadedData={handleVideoLoad}
+                  onCanPlay={handleVideoLoad}
                 />
               </BentoTilt>
             </div>
@@ -136,7 +136,7 @@ const Hero = () => {
             preload="auto"
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handleVideoLoad}
+            onCanPlay={handleVideoLoad}
           />
           <video
             src={getVideoSrc(
@@ -148,7 +148,7 @@ const Hero = () => {
             playsInline
             preload="auto"
             className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
+            onCanPlay={handleVideoLoad}
           />
         </div>
 
