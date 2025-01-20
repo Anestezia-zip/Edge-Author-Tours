@@ -29,6 +29,7 @@ const Hero = () => {
 
   useEffect(() => {
     setIsIphone(isIOS);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
