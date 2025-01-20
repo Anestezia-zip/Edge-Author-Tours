@@ -107,7 +107,7 @@ const Hero = () => {
         </div>
       )}
 
-      {isIphone ? (
+      {/* {isIphone ? (
         <div
           className="absolute left-0 top-0 size-full object-cover object-center"
           style={{
@@ -121,7 +121,7 @@ const Hero = () => {
           </h1>
         </div>
       ) : (
-        <>
+        <> */}
           <div
             id="video-frame"
             className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
@@ -223,9 +223,9 @@ const Hero = () => {
             das<b>h</b>
           </h1>
         
-        </>
+        {/* </> */}
         
-      )}
+      {/* )} */}
 
     </div>
   );
