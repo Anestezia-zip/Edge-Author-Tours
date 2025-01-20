@@ -27,12 +27,12 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    // Device check on iPhone    
     const userAgent = navigator.userAgent.toLowerCase();
     if (/iphone|ipod/.test(userAgent)) {
       setIsIphone(true);
     }
   }, []);
+  
 
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) {
