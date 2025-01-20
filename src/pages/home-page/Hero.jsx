@@ -7,6 +7,7 @@ import clsx from "clsx";
 import Button from "../../components/Button";
 import { BentoTilt } from "../../components/BentoTilt";
 import { useNavigate } from "react-router-dom";
+import { isIOS } from "react-device-detect";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,12 +28,8 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    if (/iphone|ipod/.test(userAgent)) {
-      setIsIphone(true);
-    }
+    setIsIphone(isIOS);
   }, []);
-  
 
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) {
