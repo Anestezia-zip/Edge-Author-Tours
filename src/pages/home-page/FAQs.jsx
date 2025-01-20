@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AnimatedTitle from "../../components/AnimatedTitle";
 import Button from "../../components/Button";
 
@@ -8,6 +9,8 @@ const ImageClipBox = ({ src, clipClass }) => (
 );
 
 const FAQs = () => {
+  const navigate = useNavigate();
+
   return (
     <div id="contact" className="my-20 min-h-96 w-screen  px-10">
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
@@ -39,7 +42,7 @@ const FAQs = () => {
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
 
-          <Button title="FAQs" containerClass="mt-10 cursor-pointer" />
+          <Button title="FAQs" containerClass="mt-10 cursor-pointer" onClick={() => navigate('/faqs')} />
         </div>
       </div>
     </div>
