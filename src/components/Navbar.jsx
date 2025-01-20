@@ -107,13 +107,13 @@ const NavBar = () => {
           <div className="flex h-full items-center pl-8">
             <div>
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`/${item.split(" ").join("-").toLowerCase()}`}
+                  to={`/${item.split(" ").join("-").toLowerCase()}`}
                   className="nav-hover-btn"
                 >
                   {item}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
