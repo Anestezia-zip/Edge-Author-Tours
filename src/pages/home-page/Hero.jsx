@@ -110,19 +110,18 @@ const Hero = () => {
 
       {isIphone ? (
         <div
-          id="video-frame"
           className="absolute left-0 top-0 size-full object-cover object-center"
           style={{
-            backgroundImage: 'url("/img/nature.png")',
+            backgroundImage: 'url("/img/nature.jpg")',
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
+          <h1 className="special-font hero-heading tracking-wider absolute bottom-5 right-5 z-40 text-blue-100">
             das<b>h</b>
           </h1>
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-100">
+            <h1 className="special-font hero-heading tracking-wider text-blue-100">
               drea<b>m</b>
             </h1>
 
