@@ -11,14 +11,17 @@ import { isIOS } from "react-device-detect";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const totalVideos = 4;
+const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+
+
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
   const [isIphone, setIsIphone] = useState(false);
-
-  const totalVideos = 4;
+  
   const nextVideoRef = useRef(null);
   const navigate = useNavigate();
 
@@ -46,7 +49,6 @@ const Hero = () => {
     setCurrentIndex(upcomingVideoIndex);
   };
 
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   // Animation of a video enlarging when clicked
   useGSAP(
@@ -76,23 +78,37 @@ const Hero = () => {
     }
   );
 
-  // Animation of a section transforming into a trapezoid on scroll
+  const animateClipPath = (elementId) => {
+    const ctx = gsap.context(() => {
+      gsap.set(elementId, {
+        clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+        borderRadius: "0% 0% 40% 10%",
+      });
+
+      gsap.from(elementId, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        borderRadius: "0% 0% 0% 0%",
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: elementId,
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+    });
+
+    return () => ctx.revert(); // Очищает анимацию при размонтировании
+  };
+
+  useEffect(() => {
+    if (isIphone) {
+      animateClipPath("#image-frame");
+    }
+  }, [isIphone]);
+
   useGSAP(() => {
-    gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
-      borderRadius: "0% 0% 40% 10%",
-    });
-    gsap.from("#video-frame", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      borderRadius: "0% 0% 0% 0%",
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#video-frame",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
+    animateClipPath("#video-frame");
   });
 
   return (
@@ -109,40 +125,47 @@ const Hero = () => {
       )}
 
       {isIphone ? (
-        <div
-          className="absolute left-0 top-0 size-full object-cover object-center"
-          style={{
-            backgroundImage: 'url("/img/nature.jpg")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <h1 className="special-font hero-heading tracking-wider absolute bottom-5 right-5 z-40 text-blue-100">
-            das<b>h</b>
-          </h1>
-          <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading tracking-wider text-blue-100">
-              drea<b>m</b>
-            </h1>
-
-            <h2 className="mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider">
-              Watch our latest trip to Lanzarote <br /> and relive the
-              experience.
-            </h2>
-
-            <Button
-              id="watch-trip-report"
-              title="View Report"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-              onClick={() => navigate("/all-trips")}
+        <>
+          <div
+            id="image-frame"
+            className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
+          >
+            <img
+              src="/img/nature.jpg"
+              alt="Nature"
+              className="size-full object-cover object-center"
             />
 
-            <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+            <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
               das<b>h</b>
             </h1>
+
+            <div className="absolute left-0 top-0 z-40 size-full">
+              <div className="mt-24 px-5 sm:px-10">
+                <h1 className="special-font hero-heading text-blue-100">
+                  drea<b>m</b>
+                </h1>
+
+                <h2 className="mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider">
+                  Watch our latest trip to Vietnam <br /> and relive the
+                  experience.
+                </h2>
+
+                <Button
+                  id="watch-trip-report"
+                  title="View Report"
+                  leftIcon={<TiLocationArrow />}
+                  containerClass="bg-yellow-300 flex-center gap-1"
+                  onClick={() => navigate("/all-trips")}
+                />
+              </div>
+            </div>
           </div>
-        </div>
+
+          <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+            das<b>h</b>
+          </h1>
+        </>
       ) : (
         <>
           <div
