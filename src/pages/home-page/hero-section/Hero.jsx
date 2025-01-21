@@ -15,14 +15,13 @@ gsap.registerPlugin(ScrollTrigger);
 const totalVideos = 4;
 const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
-
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // State for the current video index
   const [hasClicked, setHasClicked] = useState(false); // State to track if the video thumbnail has been clicked
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0); // State to track how many videos have been loaded
   const [isIphone, setIsIphone] = useState(false);
-  
+
   const nextVideoRef = useRef(null);
 
   // Function to update the count of loaded videos
@@ -50,9 +49,8 @@ const Hero = () => {
   // Handle click on the mini video to trigger the transition
   const handleMiniVdClick = () => {
     setHasClicked(true);
-    setCurrentIndex(upcomingVideoIndex);  // Update the current video index
+    setCurrentIndex(upcomingVideoIndex); // Update the current video index
   };
-
 
   // Animation of a video enlarging when clicked
   useGSAP(
@@ -118,9 +116,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-dvh w-screen overflow-hidden">
-      {loading && (
-        <LoadingSpinner />
-      )}
+      {loading && <LoadingSpinner />}
 
       {isIphone ? (
         <RenderIphoneView />
@@ -168,7 +164,7 @@ const Hero = () => {
                 id="next-video"
                 className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
                 onLoadedData={handleVideoLoad}
-                aria-label='Primary background video player'
+                aria-label="Primary background video player"
               />
               <video
                 src={getVideoSrc(
@@ -180,7 +176,7 @@ const Hero = () => {
                 playsInline
                 className="absolute left-0 top-0 size-full object-cover object-center"
                 onLoadedData={handleVideoLoad}
-                aria-label='Primary background video player'
+                aria-label="Primary background video player"
               />
             </div>
 

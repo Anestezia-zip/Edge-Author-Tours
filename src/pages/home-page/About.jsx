@@ -40,30 +40,33 @@ const About = () => {
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen">
+    <section id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 max-sm:mb-2 mt-28 flex flex-col items-center gap-5">
         <AnimatedTitle
           title="Emb<b>a</b>rk on your next <b>u</b>nique adventure"
           containerClass="mt-5 max-md:mt-0 !text-black text-center"
           loading="lazy"
         />
-      <div className="relative md:min-h-[500px] lg:min-h-[650px] 2xl:min-h-[900px] w-screen" id="clip">
-        <div className="mask-clip-path md:about-image max-md:about-image-md">
-          <ContactForm className="absolute left-0 top-0 size-full object-cover" />
+        <div
+          className="relative md:min-h-[500px] lg:min-h-[650px] 2xl:min-h-[900px] w-screen"
+          id="clip"
+          aria-labelledby="clip-title"
+        >
+          <div className="mask-clip-path md:about-image max-md:about-image-md">
+            <ContactForm className="absolute left-0 top-0 size-full object-cover" />
+          </div>
         </div>
-      </div>
 
         <div className="about-subtext">
           <p>Experience bespoke travel like never before</p>
-          <p className="text-gray-500 p-2">
+          <p className="text-gray-500 p-2" aria-describedby="about-subtitle">
             Our exclusive tours are handcrafted by passionate experts, designed
             to immerse you in authentic, unforgettable experiences tailored just
             for you.
           </p>
         </div>
       </div>
-
-    </div>
+    </section>
   );
 };
 
