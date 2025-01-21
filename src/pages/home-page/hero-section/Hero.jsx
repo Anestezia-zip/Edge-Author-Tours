@@ -4,10 +4,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import clsx from "clsx";
-import Button from "../../components/Button";
-import { BentoTilt } from "../../components/BentoTilt";
-import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Button";
+import { BentoTilt } from "../../../components/BentoTilt";
 import { isIOS } from "react-device-detect";
+import RenderIphoneView from "./RenderIphoneView";
+import LoadingSpinner from "./LoadingSpinner";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,6 @@ const Hero = () => {
   const [isIphone, setIsIphone] = useState(false);
   
   const nextVideoRef = useRef(null);
-  const navigate = useNavigate();
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -112,60 +112,13 @@ const Hero = () => {
   });
 
   return (
-    <div className="relative h-dvh w-screen overflow-hidden">
+    <section className="relative h-dvh w-screen overflow-hidden">
       {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-          {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
-          <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-          </div>
-        </div>
+        <LoadingSpinner />
       )}
 
       {isIphone ? (
-        <>
-          <div
-            id="image-frame"
-            className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
-          >
-            <img
-              src="/img/nature.jpg"
-              alt="Nature"
-              className="size-full object-cover object-center"
-            />
-
-            <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
-              das<b>h</b>
-            </h1>
-
-            <div className="absolute left-0 top-0 z-40 size-full">
-              <div className="mt-24 px-5 sm:px-10">
-                <h1 className="special-font hero-heading text-blue-100">
-                  drea<b>m</b>
-                </h1>
-
-                <h2 className="mb-5 max-sm:text-base max-w-68 font-bold font-robert-regular tracking-wider">
-                  Watch our latest trip to Vietnam <br /> and relive the
-                  experience.
-                </h2>
-
-                <Button
-                  id="watch-trip-report"
-                  title="View Report"
-                  leftIcon={<TiLocationArrow />}
-                  containerClass="bg-yellow-300 flex-center gap-1"
-                  onClick={() => navigate("/all-trips")}
-                />
-              </div>
-            </div>
-          </div>
-
-          <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-            das<b>h</b>
-          </h1>
-        </>
+        <RenderIphoneView />
       ) : (
         <>
           <div
@@ -185,6 +138,7 @@ const Hero = () => {
                       src={getVideoSrc(upcomingVideoIndex)}
                       loop
                       muted
+                      autoPlay
                       playsInline
                       id="current-video"
                       className="border-hsla size-64 origin-center scale-150 object-cover object-center"
@@ -264,7 +218,7 @@ const Hero = () => {
           </h1>
         </>
       )}
-    </div>
+    </section>
   );
 };
 

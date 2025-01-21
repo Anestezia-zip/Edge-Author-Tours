@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./Hero";
+import Hero from "./hero-section/Hero";
 import GalleryCards from "./GalleryCards";
 import About from "./About";
 import AboutUs from "./AboutUs";
