@@ -27,9 +27,7 @@ export const BentoCard = ({ src, title, description, description2 }) => {
   };
 
   return (
-    <div
-      className="relative size-full"
-    >
+    <div className="relative size-full">
       <video
         ref={videoRef}
         src={src}
@@ -61,26 +59,26 @@ export const BentoCard = ({ src, title, description, description2 }) => {
           )}
         </div>
 
-        <Link to="/all-trips" className="block h-full w-full">
+        <div
+          ref={hoverButtonRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="mt-2 border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white"
+        >
+          {/* Radial gradient hover effect */}
           <div
-            ref={hoverButtonRef}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white"
-          >
-            {/* Radial gradient hover effect */}
-            <div
-              className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
-              style={{
-                opacity: hoverOpacity,
-                background: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #656fe288, #00000026)`,
-              }}
-            />
-            <TiLocationArrow className="relative z-20" />
+            className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+            style={{
+              opacity: hoverOpacity,
+              background: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #656fe288, #00000026)`,
+            }}
+          />
+          <TiLocationArrow className="relative z-20" />
+          <Link to="/all-trips" className="block h-full w-full">
             <p className="relative z-20">watch trip</p>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
