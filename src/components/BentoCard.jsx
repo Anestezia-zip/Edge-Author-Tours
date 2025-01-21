@@ -27,7 +27,11 @@ export const BentoCard = ({ src, title, description, description2 }) => {
   };
 
   return (
-    <div className="relative size-full">
+    <div
+      className="relative size-full"
+      role="region"
+      aria-labelledby="bento-card-title"
+    >
       <video
         ref={videoRef}
         src={src}
@@ -36,11 +40,18 @@ export const BentoCard = ({ src, title, description, description2 }) => {
         autoPlay
         playsInline
         className="absolute left-0 top-0 size-full object-cover object-center"
-        loading="lazy"
+        aria-label="Background video showcasing the trip"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
         <div>
-          <h1 className="bento-title special-font mb-3">{title}</h1>
+          <h1
+            id="bento-card-title"
+            className="bento-title special-font mb-3"
+            role="heading"
+            aria-level="2"
+          >
+            {title}
+          </h1>
           {description && (
             <div className="inline-block relative">
               <div className="absolute inset-0 bg-black bg-opacity-45 rounded-md z-0"></div>
@@ -65,6 +76,8 @@ export const BentoCard = ({ src, title, description, description2 }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           className="mt-2 border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white"
+          role="button"
+          aria-label="Watch trip details"
         >
           {/* Radial gradient hover effect */}
           <div

@@ -54,16 +54,28 @@ const AboutUs = () => {
           Based on your preferences, we’ll do all the hard work for you:
         </p>
         <ul className="text-left">
-          <li className="flex items-center gap-5 p-2 mt-4 shadow-md bg-blue-25 max-w-3xl" role="listitem">
+          <li
+            className="flex items-center gap-5 p-2 mt-4 shadow-md bg-blue-25 max-w-3xl"
+            role="listitem"
+          >
             <div className="relative">
-              <img width={45} height={45} src="/img/august.png" alt="Calendar icon" role="presentation" />
+              <img
+                width={45}
+                height={45}
+                src="/img/august.png"
+                alt="Calendar icon"
+                role="presentation"
+              />
               <div className="absolute top-[13px] left-[5px] flex items-center justify-center text-xs font-bold text-black">
                 {currentMonth} {currentDay}
               </div>
             </div>
             <p>we'll find the perfect travel dates</p>
           </li>
-          <li className="flex items-center gap-5 p-2 mt-4 shadow-md bg-blue-25 max-w-3xl" role="listitem">
+          <li
+            className="flex items-center gap-5 p-2 mt-4 shadow-md bg-blue-25 max-w-3xl"
+            role="listitem"
+          >
             <img
               width={47}
               height={47}
@@ -97,12 +109,21 @@ const AboutUs = () => {
 
       {/* What you get */}
       <div>
-        <p className="text-3xl max-md:text-xl text-center font-semibold uppercase my-6 mt-20 max-sm:mt-16" id="what-you-get">
+        <p
+          className="text-3xl max-md:text-xl text-center font-semibold uppercase my-6 mt-20 max-sm:mt-16"
+          id="what-you-get"
+        >
           What you get:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-2">
-          <li className="bg-white shadow-lg p-6 flex flex-col justify-between"  aria-labelledby="personalized-advice">
-            <h3 className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800" id="personalized-advice">
+          <li
+            className="bg-white shadow-lg p-6 flex flex-col justify-between"
+            aria-labelledby="personalized-advice"
+          >
+            <h3
+              className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800"
+              id="personalized-advice"
+            >
               Personalized Advice
             </h3>
             <p className="text-gray-600 text-center mx-auto max-w-[80%]">
@@ -118,8 +139,14 @@ const AboutUs = () => {
               fees, no obligations.
             </p>
           </li>
-          <li className="bg-white shadow-lg p-6 flex flex-col justify-between" aria-labelledby="hidden-gems">
-            <h3 className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800" id="hidden-gems">
+          <li
+            className="bg-white shadow-lg p-6 flex flex-col justify-between"
+            aria-labelledby="hidden-gems"
+          >
+            <h3
+              className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800"
+              id="hidden-gems"
+            >
               Hidden Gems
             </h3>
             <p className="text-gray-600 text-center mt-1 mx-auto max-w-[80%]">
@@ -135,8 +162,14 @@ const AboutUs = () => {
               travels — explore like a local!
             </p>
           </li>
-          <li className="bg-white shadow-lg p-6 flex flex-col justify-between" aria-labelledby="global-reach">
-            <h3 className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800" id="global-reach">
+          <li
+            className="bg-white shadow-lg p-6 flex flex-col justify-between"
+            aria-labelledby="global-reach"
+          >
+            <h3
+              className="mb-1 sm:text-xl text-center font-bold uppercase text-blue-800"
+              id="global-reach"
+            >
               Global Reach
             </h3>
             <p className="text-gray-600 text-center mx-auto max-w-[80%]">
