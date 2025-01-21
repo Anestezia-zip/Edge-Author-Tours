@@ -124,13 +124,18 @@ const Hero = () => {
           <div
             id="video-frame"
             className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
+            role="banner"
+            aria-label="Main video section"
           >
             <div>
               {/* Main front video player */}
               <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
                 <div
-                  onClick={handleMiniVdClick}
                   className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+                  onClick={handleMiniVdClick}
+                  tabIndex="0"
+                  role="button"
+                  aria-label="Click to play next video"
                 >
                   <BentoTilt className="bento-tilt_2" quickerMovement="60">
                     <video
@@ -141,6 +146,7 @@ const Hero = () => {
                       id="current-video"
                       className="border-hsla size-64 origin-center scale-150 object-cover object-center"
                       onLoadedData={handleVideoLoad}
+                      aria-label={`Preview of video ${upcomingVideoIndex}`}
                     />
                   </BentoTilt>
                 </div>
@@ -154,10 +160,10 @@ const Hero = () => {
                 muted
                 autoPlay
                 playsInline
-                preload="auto"
                 id="next-video"
                 className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
                 onLoadedData={handleVideoLoad}
+                aria-label='Primary background video player'
               />
               <video
                 src={getVideoSrc(
@@ -167,9 +173,9 @@ const Hero = () => {
                 muted
                 autoPlay
                 playsInline
-                preload="auto"
                 className="absolute left-0 top-0 size-full object-cover object-center"
                 onLoadedData={handleVideoLoad}
+                aria-label='Primary background video player'
               />
             </div>
 
@@ -206,6 +212,7 @@ const Hero = () => {
                   leftIcon={<TiLocationArrow />}
                   containerClass="bg-yellow-300 flex-center gap-1"
                   onClick={() => navigate("/all-trips")}
+                  aria-label="View our last trip report"
                 />
               </div>
             </div>

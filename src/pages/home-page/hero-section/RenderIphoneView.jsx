@@ -11,11 +11,14 @@ const RenderIphoneView = () => {
     <div
       id="image-frame"
       className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
+      role="banner"
+      aria-label="Main video section"
     >
       <img
         src="/img/nature.jpg"
-        alt="Nature"
         className="size-full object-cover object-center"
+        role="img"
+        alt="A scenic view of nature"
       />
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
@@ -39,6 +42,7 @@ const RenderIphoneView = () => {
             leftIcon={<TiLocationArrow />}
             containerClass="bg-yellow-300 flex-center gap-1"
             onClick={() => navigate("/all-trips")}
+            aria-label="View our last trip report"
           />
         </div>
       </div>
