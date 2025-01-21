@@ -17,14 +17,15 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [hasClicked, setHasClicked] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(1); // State for the current video index
+  const [hasClicked, setHasClicked] = useState(false); // State to track if the video thumbnail has been clicked
   const [loading, setLoading] = useState(true);
-  const [loadedVideos, setLoadedVideos] = useState(0);
+  const [loadedVideos, setLoadedVideos] = useState(0); // State to track how many videos have been loaded
   const [isIphone, setIsIphone] = useState(false);
   
   const nextVideoRef = useRef(null);
 
+  // Function to update the count of loaded videos
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   };
@@ -36,17 +37,20 @@ const Hero = () => {
     }
   }, []);
 
+  // When all videos are loaded, set loading to false
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) {
       setLoading(false);
     }
   }, [loadedVideos]);
 
+  // Calculate the next video index
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
+  // Handle click on the mini video to trigger the transition
   const handleMiniVdClick = () => {
     setHasClicked(true);
-    setCurrentIndex(upcomingVideoIndex);
+    setCurrentIndex(upcomingVideoIndex);  // Update the current video index
   };
 
 
@@ -78,6 +82,7 @@ const Hero = () => {
     }
   );
 
+  // Animation for clip-path transformation when scrolling
   const animateClipPath = (elementId) => {
     const ctx = gsap.context(() => {
       gsap.set(elementId, {
