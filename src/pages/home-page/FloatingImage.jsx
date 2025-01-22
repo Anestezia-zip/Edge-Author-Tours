@@ -7,10 +7,15 @@ import { debounce } from "lodash";
 import { Link, useNavigate } from "react-router-dom";
 
 const FloatingImage = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const frameRef = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const isMobile = window.innerWidth <= 1024;
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleMouseMove = useCallback(
     debounce((e) => {
@@ -56,7 +61,7 @@ const FloatingImage = () => {
   };
 
   return (
-    <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
+    <section id="story" className="min-h-dvh w-screen bg-black text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
           Secrets Await
@@ -68,7 +73,10 @@ const FloatingImage = () => {
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
-          <Link to='/our-path'>
+          <Link
+            to="/our-path"
+            aria-label="Explore the hidden path to discover secrets"
+          >
             <div className="story-img-container">
               <div className="story-img-mask">
                 <div className="story-img-content">
@@ -79,7 +87,7 @@ const FloatingImage = () => {
                     onMouseUp={handleMouseLeave}
                     onMouseEnter={handleMouseLeave}
                     src="/img/gems.png"
-                    alt="gems"
+                    alt="Illustration of hidden gems"
                     className="object-contain"
                     loading="lazy"
                   />
@@ -92,8 +100,9 @@ const FloatingImage = () => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start max-[454px]:block max-md:hidden">
-            Step into a world where the unseen comes to life. The path ahead holds mysteries, 
-            wonders, and stories waiting to be discovered — dare to explore.
+              Step into a world where the unseen comes to life. The path ahead
+              holds mysteries, wonders, and stories waiting to be discovered —
+              dare to explore.
             </p>
 
             <Button
@@ -101,11 +110,12 @@ const FloatingImage = () => {
               title="discover secrets"
               containerClass="mt-5"
               onClick={() => navigate("/our-path")}
+              aria-label="Click to discover the secrets of the hidden realm"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
