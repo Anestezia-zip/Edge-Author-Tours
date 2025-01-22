@@ -9,6 +9,7 @@ import { BentoTilt } from "../../../components/BentoTilt";
 import { isIOS } from "react-device-detect";
 import RenderIphoneView from "./RenderIphoneView";
 import LoadingSpinner from "./LoadingSpinner";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,7 @@ const Hero = () => {
   const [isIphone, setIsIphone] = useState(false);
 
   const nextVideoRef = useRef(null);
+  const navigate = useNavigate()
 
   // Function to update the count of loaded videos
   const handleVideoLoad = () => {

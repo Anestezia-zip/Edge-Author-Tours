@@ -4,9 +4,8 @@ import { destinations } from "../pages/contact-form/ContactForm";
 const DestinationList = ({
   selectedDestinations,
   setSelectedDestinations,
-  containerClassList = ''
+  containerClassList = "",
 }) => {
-
   const handleDestinationSelect = (destinationName) => {
     setSelectedDestinations((prev) => {
       const isSelected = prev.includes(destinationName);

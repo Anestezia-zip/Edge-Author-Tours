@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Button from "../../components/Button";
 import AnimatedTitle from "../../components/AnimatedTitle";

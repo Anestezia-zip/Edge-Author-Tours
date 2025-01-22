@@ -27,7 +27,7 @@ export const BentoTilt = ({
 
       const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.95, .95, .95)`;
       setTransformStyle(newTransform);
-    },16),
+    }, 16),
     [quickerMovement]
   );
 

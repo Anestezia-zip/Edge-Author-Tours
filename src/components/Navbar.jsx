@@ -90,7 +90,7 @@ const NavBar = () => {
                 loop
               />
               {[1, 2, 3, 4].map((bar) => (
-                <div
+                <span
                   key={bar}
                   className={clsx("indicator-line", {
                     active: isIndicatorActive,
@@ -103,7 +103,7 @@ const NavBar = () => {
             </button>
           </div>
 
-          {/* Navigation Links and Audio Button */}
+          {/* Navigation Links */}
           <div className="flex h-full items-center pl-8">
             <div>
               {navItems.map((item, index) => (
