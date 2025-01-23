@@ -52,7 +52,7 @@ const About = () => {
           id="clip"
           aria-labelledby="clip-title"
         >
-          <div className="mask-clip-path md:about-image max-md:about-image-md">
+          <div className="mask-clip-path md:about-image max-md:about-image-md h-full">
             <ContactForm />
           </div>
         </div>

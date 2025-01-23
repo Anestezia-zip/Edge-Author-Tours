@@ -34,7 +34,6 @@ const DestinationList = ({
               src={destination.image}
               alt={destination.name}
               className={`object-cover rounded-lg w-full h-full ${containerClassList}`}
-              loading="lazy"
             />
             <span className="absolute max-md:text-sm max-sm:text-xs py-1/2 px-2 bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 text-white uppercase font-bold bg-black/40 shadow-lg rounded-lg">
               {destination.name}
