@@ -42,7 +42,7 @@ const ContactForm = () => {
           <DestinationList
             selectedDestinations={selectedDestinations}
             setSelectedDestinations={setSelectedDestinations}
-            containerClassList={'max-md:h-16 md:w-[300px]'}
+            containerClassList={'max-md:h-16'}
           />
 
           <button

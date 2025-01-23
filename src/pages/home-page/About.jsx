@@ -24,8 +24,8 @@ const About = () => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
-        start: "center 52%",
-        end: "+=670 center",
+        start: "center 38%",
+        end: "+=800 center",
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
@@ -42,17 +42,20 @@ const About = () => {
   return (
     <section id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 max-sm:mb-2 mt-28 flex flex-col items-center gap-5">
-        <AnimatedTitle
-          title="Emb<b>a</b>rk on your next <b>u</b>nique adventure"
-          containerClass="mt-5 max-md:mt-0 !text-black text-center"
-          loading="lazy"
-        />
+        <div>
+          <AnimatedTitle
+            title="Emb<b>a</b>rk on your next <b>u</b>nique adventure"
+            containerClass="mt-5 max-md:mt-0 !text-black text-center"
+            loading="lazy"
+          />
+        </div>
+        
         <div
-          className="relative md:min-h-[500px] lg:min-h-[650px] 2xl:min-h-[900px] w-screen"
+          className="relative md:min-h-[370px] lg:min-h-[440px] xl:min-h-[500px] 2xl:min-h-[630px] w-screen"
           id="clip"
           aria-labelledby="clip-title"
         >
-          <div className="mask-clip-path md:about-image max-md:about-image-md h-full">
+          <div className="mask-clip-path md:about-image max-md:about-image-md h-full md:min-w-[580px]">
             <ContactForm />
           </div>
         </div>

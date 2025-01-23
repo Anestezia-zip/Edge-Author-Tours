@@ -80,30 +80,24 @@ body {
   }
 
   .about-subtext {
-    @apply absolute -z-10 translate-y-[600px] max-md:translate-y-[670px]  left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
-  }
+    @apply relative -z-10 mt-4 -top-[680px] w-full max-w-96 text-center font-circular-web text-lg md:max-w-[34rem];
+  }  
 
-  @media (max-width: 768px) and (max-height: 770px) {
+  @media (max-width: 768px) and (max-height: 1000px) {
     .about-subtext {
       @apply hidden;
     }
   }
 
-  @media (min-width: 768px) and (max-width: 883px) {    
+  @media (min-width: 1024px) {
     .about-subtext {
-      @apply translate-y-[720px];
+      @apply -top-[750px];
     }
   }
 
-  @media (min-width: 883px) and (max-width: 1055px) {    
+  @media (min-width: 1536px) {
     .about-subtext {
-      @apply translate-y-[740px];
-    }
-  }
-
-  @media (min-width: 1240px) {  
-    .about-subtext {
-      @apply translate-y-[620px];
+      @apply -top-[820px];
     }
   }
 
