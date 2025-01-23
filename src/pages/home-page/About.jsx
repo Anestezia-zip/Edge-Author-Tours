@@ -53,7 +53,7 @@ const About = () => {
           aria-labelledby="clip-title"
         >
           <div className="mask-clip-path md:about-image max-md:about-image-md">
-            <ContactForm className="absolute left-0 top-0 size-full object-cover" />
+            <ContactForm />
           </div>
         </div>
 
