@@ -103,7 +103,7 @@ body {
 
   @media (min-width: 1240px) {  
     .about-subtext {
-      @apply translate-y-[800px];
+      @apply translate-y-[620px];
     }
   }
 
