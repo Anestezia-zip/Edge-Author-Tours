@@ -126,7 +126,7 @@ const Hero = () => {
         <>
           <div
             id="video-frame"
-            className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black/85"
+            className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg"
             role="banner"
             aria-label="Main video section"
           >
@@ -159,6 +159,7 @@ const Hero = () => {
               <video
                 ref={nextVideoRef}
                 src={getVideoSrc(currentIndex)}
+                preload="auto"
                 loop
                 muted
                 autoPlay
@@ -172,6 +173,7 @@ const Hero = () => {
                 src={getVideoSrc(
                   currentIndex === totalVideos - 1 ? 1 : currentIndex
                 )}
+                preload="auto"
                 loop
                 muted
                 autoPlay

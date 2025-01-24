@@ -40,7 +40,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="min-h-screen w-screen">
+    <section id="about" className="md:min-h-screen max-md:mb-8 w-screen">
       <div className="relative mb-8 max-sm:mb-2 mt-28 flex flex-col items-center gap-5">
         <div>
           <AnimatedTitle
