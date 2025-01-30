@@ -1,5 +1,7 @@
 # Author's tours - Edge platform
 Demo-link: https://edge-author-tours.vercel.app/
+<img width="747" alt="edge-responsive" src="https://github.com/user-attachments/assets/46cb9cba-ec4f-4c3f-8589-7b8a43612b21" />
+
 
 This project is a visually captivating React-based website designed to provide a highly interactive and engaging user experience. Its unique animations, responsive design, and carefully crafted features make it both technically impressive and visually stunning.  
 
